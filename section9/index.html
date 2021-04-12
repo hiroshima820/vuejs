@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        Hello
+        <span
+          class="bg-gray text-blue"
+          v-bind:class="{large:isLarge, 'text-danger': hasError}"
+          >Vue.js!</span
+        >
+      </p>
+      <p>Hello <span v-bind:class="[largeClass, dangerClass]">Vue.js!</span></p>
+      <p>Hello <span v-bind:class="classObject">Vue.js!</span></p>
+      <p>
+        Hello
+        <span v-bind:class="[isLarge ? largeClass2 : '', dangerClass2]"
+          >Vue.js!</span
+        >
+      </p>
+      <p>
+        Hello
+        <span v-bind:style="{ color: color, fontSize: fontSize + 'px' }"
+          >Vue.js!</span
+        >
+      </p>
+      <p>
+        Hello
+        <span v-bind:style="styleObject">Vue.js!</span>
+      </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
