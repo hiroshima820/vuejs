@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>{{ counter }}</div>
+      <div>{{ message }}</div>
+      <button v-on:click="counter++">Click1</button><br />
+      <button v-on:click="clickHandler2">Click2</button><br />
+      <button v-on:click="clickHandler3($event, 'Vue.js')">Click3</button><br />
+
+      <button v-on:click.once="clickHandler4">Now</button><br />
+
+      <input type="text" v-on:keyup.27="clear" v-model="message" /><br />
+      <input type="text" v-on:keyup.esc="clear" v-model="message" /><br />
+      <input
+        type="text"
+        v-on:keyup.esc.space.up="clear"
+        v-model="message"
+      /><br />
+
+      <input type="text" v-on:keyup.ctrl.67="clear" v-model="message" /><br />
+      <div v-on:click.shift="clickHandler5">Click me!</div>
+
+      <button v-on:click="clickHandler6">Click1</button><br />
+      <button @click="clickHandler6">Click2</button><br />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
